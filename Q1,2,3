@@ -1,0 +1,43 @@
+In Floating point representation we have three components
+1.The Sign Bit
+2.Exponent
+3.Fractional Part
+●
+Precession is one the prime attribute of any Floating point Representation, 
+1.Does any of the above three components play a role in the defining the Precession of the number ? If so which are the component or Components  which play the  role in defining precession  and how ? Explain this with example in your own words
+
+Ans:
+Precision depends on the number of bits in mantissa .If there are more bits designated to the mantissa, the representation of the number is very accurate/precise. If there are fewer bits, then two numbers which are close to each other in value might end up with the same representation.
+Eg: Single has 23 bits dedicated to the mantissa while double has 52.
+2. 2.What is Normal and Subnormal  Values as per IEEE 754  standards  explain this  with the  help of number line
+
+Ans:
+According to IEEE754, there is a range of numbers that can be represented. Normal values are those which fall into the prescribed range of a floating point format. Subnormal values are those whose exponent is zero ie, numbers whose value is lesser than the smallest normal number. 
+According to IEEE754, the magnitude of the smallest possible number is b min where min is the minimum value the exponent can take. Suppose this value is 4.ie, the smallest number that can be represented is -2^4 which is 0.0625.
+if we had to subtract 0.03125 from 0.0625, the result would be zero if there were only normal numbers  because both these numbers would be represented by the same value and hence the result would be zero. These are called  underflows. To avoid this, subnormal numbers was introduced. These numbers are permitted to have a leading zero in their mantissa. By doing this, the gap between zero and the smallest number that can be represented is brought down.
+3.IEEE 754vv defines standards for rounding floating points numbers to a represent able value. There are five methods defines by IEEE for this – Take time and  understand what these five methods and explain it in your words using diagrams, illustrations of your own.
+IEEE754 defines 5 rules for rounding .
+ The first two round to the nearest value whereas the others are called direct roundings. 
+• Round to nearest even 
+This method rounds to the nearest value. 
+If the number falls exactly midway, then the value with LSB 0(even) is chosen.
+ Ex:16.5—>16
+ 18.5 -->18 
+• Round to nearest, ties away from zero 
+This method also rounds to the nearest value; but in case of a tie, positive numbers are rounded off to the closest number above whereas negative numbers are rounded to the closest number below. 
+Ex:18.5—>18 
+
+-18.5 -19
+
+• Round up, or round toward plus infinity
+ This is also called ceiling, where the rounding is always to a larger number. 
+Ex:11.5 12 
+-11.5 -->-11 
+• Round down, or round toward minus infinity 
+This is also called floor, where the numbers are always rounded to a smaller value.
+ Ex:15.5 15 
+-15.5 16
+ • Round toward zero, or chop, or truncate 
+This is called truncation where the output chosen is always closer to 0.
+ Ex.12.5 12 
+-12.5 12
