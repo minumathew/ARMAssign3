@@ -1,13 +1,13 @@
 	 AREA     appcode, CODE, READONLY
      EXPORT __main
 	 ENTRY 
-;calculate pow(e,x) using taylor's series expansion\
-:result present in r3
+;calculate pow(e,x) using taylor's series 
+:result in r3
 
 __main  FUNCTION	
 x SN 1;power of e
 result SN 3;result
-temp SN 2;temporary var
+temp SN 2;temp var
 n SN 4;no of iterations
 count SN 5;loop counter
 one SN 6
@@ -21,7 +21,7 @@ one SN 6
 	
 	
 loop
-	VCMP.F32 n,count;loop till n reaches two accounting for initialisations
+	VCMP.F32 n,count;loop till n reaches two 
 	VMRS.F32 APSR_nzcv,FPSCR;copy flags from fpscr to apsr before testing eq
 	BEQ stop
 	VMUL.F32 temp,temp,x;temp=temp*x/i
